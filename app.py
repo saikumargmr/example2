@@ -1,9 +1,10 @@
 import pickle
 from flask import Flask,request,render_template
 import numpy as np
+
 app=Flask(__name__)
 # filename='xgb_regressor'
-loaded_model=pickle.load(open('knn_model','rb'))
+loaded_model=pickle.load(open('xgb_regressor','rb'))
 
 
 @app.route('/')
