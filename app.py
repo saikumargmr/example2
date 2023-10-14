@@ -1,11 +1,9 @@
 import pickle
-import xgboost as xgb
-from xgboost import XGBRegressor
 from flask import Flask,request,render_template
 import numpy as np
 app=Flask(__name__)
 # filename='xgb_regressor'
-loaded_model=pickle.load(open('xgb_regressor.pkl','rb'))
+loaded_model=pickle.load(open('knn_model','rb'))
 
 
 @app.route('/')
@@ -24,7 +22,7 @@ def predict():
     # test_reshaped=test.reshape(1,-1)
     y_pred =loaded_model.predict(test)
     print(y_pred)
-    
+       
     return render_template("index.html",predict='{}' .format(y_pred))
 
 if __name__ == '__main__':
