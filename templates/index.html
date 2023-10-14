@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>Project</title>
+
+    
+</head>
+
+<body>
+    <form action="{{url_for('predict')}}" method="post">
+        a:
+        <input type="text" name = "a">
+        b:
+        <input type="text" name = "b">
+        c:
+        <input type="text" name = "c">
+        d:
+        <input type="text" name = "d">
+        <button type="submit" >predict</button>
+    </form>
+    {{predict}}
+</body>
+
+</html>
