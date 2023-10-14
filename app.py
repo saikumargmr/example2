@@ -2,10 +2,11 @@ import pickle
 import xgboost as xgb
 from xgboost import XGBRegressor
 from flask import Flask,request,render_template
+import numpy as np
 app=Flask(__name__)
 # filename='xgb_regressor'
 loaded_model=pickle.load(open('xgb_regressor.pkl','rb'))
-import numpy as np
+
 
 @app.route('/')
 def index():
