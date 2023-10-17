@@ -5,29 +5,114 @@
 
 <title>Project</title>
 
-    
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .form .div2, form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+           
+        }
+        h1{
+            box-shadow: 0px 0px 5px rgba(100, 100, 100, 0.8); 
+            border-radius: 10px;
+            padding: 10px; 
+        }
+        input{
+         
+            margin: 10px;
+            padding: 15px 10px;
+            border-radius: 8px ;
+            width: 250px;
+            flex-shrink: 0;
+        }
+        .form{
+            width: 800px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .form .div2{
+            justify-content: center;
+        }
+        tr{
+            text-align: center;
+        }
+        table{
+            font-size: larger;
+            box-shadow: 0px 0px 5px rgba(100, 100, 100, 0.8); 
+            border-radius: 10px;
+            padding: 10px;
+        }
+       .logos{
+            box-shadow: 0px 0px 5px rgba(100, 100, 100, 0.8); 
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .result{
+            margin-top: 25px;
+            text-align: center;
+            padding: 8px 18px;
+            font-size: larger;
+        }
+        form{
+            box-shadow: 0px 0px 5px rgba(100, 100, 100, 0.8); 
+            border-radius: 10px;
+            padding: 10px;
+        }
+        button{
+            background-color: white;
+            border: 1px black solid;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="logos">
+        <img src="https://gmrit.edu.in/images/logo.jpg"> <img src="https://csigmrit.com/assets/logo2.jpg">
+    </div>
+    <h1>Forecasting The Remaining Useful Life of Electric vehicle Battery</h1>
+    <div class="form">
     <form action="{{url_for('predict')}}" method="post">
-        a:
-        <input type="text" name = "a">
-        b:
-        <input type="text" name = "b">
-        c:
-        <input type="text" name = "c">
-        d:
-        <input type="text" name = "d">
-        e:
-        <input type="text" name = "e">
-        f:
-        <input type="text" name = "f">
-        g:
-        <input type="text" name = "g">
+        
+        <input type="text" name="a" placeholder="Discharge Time (s)">
+        
+        <input type="text" name="b" placeholder="Decrement 3.6-3.4V (s)">
+        
+        <input type="text" name="c" placeholder="Max. Voltage Dischar. (V)">
+        
+        <input type="text" name="d" placeholder="Min. Voltage Charg. (V)">
+        
+        <input type="text" name="e" placeholder="Time at 4.15V (s)">
+        
+        <input type="text" name="f" placeholder="Time constant current (s)">
+        
+        <input type="text" name="g" placeholder="Charging time (s)">
         
         <button type="submit" >predict</button>
     </form>
-    {{predict}}
+    <div class="div2">
+        <table >
+            <tr><td><b>Guide Name: </b> K. Karthick</td></tr>
+            <tr><th>Group Members</th></tr>
+            <tr><td>K. Yashovardhan</td></tr>
+            <tr><td>K. Ramesh</td></tr>
+            <tr><td>V. Gowri Shankar</td></tr>
+            <tr><td>P. Joshna</td></tr>
+            <tr><td>SK. Sanuwar</td></tr>
+           
+            
+        </table>
+    </div>
+</div>
+    <div class="result">Remaining Useful Life of the Battery : {{predict}} (cycles)</div>
+    
 </body>
 
 </html>

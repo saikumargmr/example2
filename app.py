@@ -15,7 +15,7 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     
-    test=[int (x) for x in request.form.values()]
+    test=[float (x) for x in request.form.values()]
     # test=request.form.values()
     print(test)
     test=np.asarray(test)
@@ -23,7 +23,7 @@ def predict():
     y_pred =loaded_model.predict(test_reshaped)
     print(y_pred)
        
-    return render_template("index.html",predict='{}' .format(y_pred))
+    return render_template("index.html",predict='{}' .format(int(y_pred)))
 
 if __name__ == '__main__':
     app.run(debug=True)
