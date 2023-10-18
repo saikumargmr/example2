@@ -3,7 +3,7 @@ from flask import Flask,request,render_template
 import numpy as np
 app=Flask(__name__)
 # filename='xgb_regressor'
-loaded_model=pickle.load(open('knn_model1.sav','rb'))
+loaded_model=pickle.load(open('model_knn (1).sav','rb'))
 
 
 @app.route('/')
