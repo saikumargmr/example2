@@ -85,19 +85,19 @@
     <div class="form">
     <form action="{{url_for('predict')}}" method="post">
         
-        <input type="text" name="a" placeholder="Discharge Time (s)">
+        <input type="text" name="a" placeholder="Discharge Time (s)" required>
         
-        <input type="text" name="b" placeholder="Decrement 3.6-3.4V (s)">
+        <input type="text" name="b" placeholder="Decrement 3.6-3.4V (s)" required>
         
-        <input type="text" name="c" placeholder="Max. Voltage Dischar. (V)">
+        <input type="text" name="c" placeholder="Max. Voltage Dischar. (V)" required>
         
-        <input type="text" name="d" placeholder="Min. Voltage Charg. (V)">
+        <input type="text" name="d" placeholder="Min. Voltage Charg. (V)" required>
         
-        <input type="text" name="e" placeholder="Time at 4.15V (s)">
+        <input type="text" name="e" placeholder="Time at 4.15V (s)" required>
         
-        <input type="text" name="f" placeholder="Time constant current (s)">
+        <input type="text" name="f" placeholder="Time constant current (s)" required>
         
-        <input type="text" name="g" placeholder="Charging time (s)">
+        <input type="text" name="g" placeholder="Charging time (s)" required>
         
         <button type="submit" >predict</button>
     </form>
